@@ -1,4 +1,4 @@
-# HD44780-LIBRARY
+# HD44780-LIBRARY for AVR
 Library for working with HD44780 LCD on AVR
 
 This library allows you to work with LCD in different modes, namely:
