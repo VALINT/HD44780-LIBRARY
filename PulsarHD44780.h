@@ -1,23 +1,26 @@
  /* "PULSAR library"
  *
  * Author: VAL
- * Created: 12.02.2018 13:04:21
- * Version: 1.3
+ * Created: 12.02.2018
+ * Version: 1.4
  *
- * V 1.0
+ * V 1.0	(12.02.2018)
  * This is a simplified library needed for managing the display 
  * with a HD44780 controller via one wire. Works only in 4-bit mode. 
  * One-wire control is implemented using the shift register SN74HC595. 
  * In theory, you can using SN74HC164, but I didn't check it.
  *
- * V 1.1
+ * V 1.1	(14.02.2018)
  * I modified the library to work with SN74HC164.
  *
- * V 1.2
+ * V 1.2	(25.04.2018)
  * Added support of Cyrillic alphabet.
  *
- * V 1.3
+ * V 1.3	(25.04.2018)
  * Added support of 4-bits and 8-bits work modes.
+ *
+ * V 1.4	(12.10.2018)
+ * Added SentLine function without length of line argument needing. It is more conveniently.
  */ 
 
 
@@ -128,15 +131,17 @@
 		void LCD_Scroll(uint8_t number, uint8_t dir);
 	
 //	Sent text data in the LCD
-		void LCD_SentLine(char line[],uint8_t lon);
+		void LCD_SendLine(char line[],uint8_t lon);
+		
+		void LCD_SendLine(char line[]);
 	
 //	Sent data byte or command in the LCD
 //	LCD_SentByte(data_byte,DATA)
 //	LCD_SentByte(aommand_number,COMMAND)
-		void LCD_SentByte(uint8_t byte,bool rs);
+		void LCD_SendByte(uint8_t byte,bool rs);
 	
 //	Sent data byte in the LCD (analog LCD_SentByte(data_byte,DATA))
-		void LCD_SentChar(uint8_t data);
+		void LCD_SendChar(uint8_t data);
 		
 //	Sets desired cursor mode
 //	LCD_Cursor(CURSOR_BLINK);

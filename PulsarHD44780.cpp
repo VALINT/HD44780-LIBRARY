@@ -69,7 +69,7 @@ uint8_t out = 0;								// This byte is generated for sending in the shift regis
 		_delay_us(STROBE_DELAY_MS);					// You can variate this delay for faster or most stability work
 	}
 	
-	void LCD_SentByte(uint8_t byte,bool rs)			// This function sent byte in the LCD
+	void LCD_SendByte(uint8_t byte,bool rs)			// This function sent byte in the LCD
 	{
 		uint8_t highbyte = 0;
 		highbyte = byte>>4;							// This part separates byte on two senior and younger parts, needed for 4-bits mode
@@ -79,7 +79,7 @@ uint8_t out = 0;								// This byte is generated for sending in the shift regis
 		SentFourBits(byte);
 	}
 	
-	void LCD_SentChar(uint8_t data)					// This function sent data byte in the LCD
+	void LCD_SendChar(uint8_t data)					// This function sent data byte in the LCD
 	{
 		uint8_t highbyte = 0;
 		highbyte = data>>4;
@@ -105,13 +105,13 @@ uint8_t out = 0;								// This byte is generated for sending in the shift regis
 		_delay_ms(1);									//
 		SentFourBits(0b00000010);						//
 		_delay_ms(1);									//
-		LCD_SentByte(0b00101100, COMMAND);				//
+		LCD_SendByte(0b00101100, COMMAND);				//
 		_delay_ms(1);									//
-		LCD_SentByte(0b00001100, COMMAND);				//
+		LCD_SendByte(0b00001100, COMMAND);				//
 		_delay_ms(1);									//
-		LCD_SentByte(0b00000001, COMMAND);				//
+		LCD_SendByte(0b00000001, COMMAND);				//
 		_delay_ms(1);									//
-		LCD_SentByte(0b00000110, COMMAND);				//
+		LCD_SendByte(0b00000110, COMMAND);				//
 		_delay_ms(1);									//------------------------
 	}
 #endif
@@ -135,7 +135,7 @@ uint8_t out = 0;								// This byte is generated for sending in the shift regis
 		_delay_us(50);
 	}																		
 
-	void LCD_SentByte(uint8_t byte,bool rs)	// This function sent byte in the LCD	 
+	void LCD_SendByte(uint8_t byte,bool rs)	// This function sent byte in the LCD	 
 	{
 		char highbyte = 0;													
 		highbyte = byte>>4;					 // This part separates byte on two senior and younger parts, needed for 4-bits mode 
@@ -145,7 +145,7 @@ uint8_t out = 0;								// This byte is generated for sending in the shift regis
 		sent_four_bits(byte);												
 	}
 
-	void LCD_SentChar(uint8_t data)			// This function sent data byte in the LCD								
+	void LCD_SendChar(uint8_t data)			// This function sent data byte in the LCD								
 	{																		
 		char highbyte = 0;													
 		highbyte = data>>4;													
@@ -172,13 +172,13 @@ uint8_t out = 0;								// This byte is generated for sending in the shift regis
 		_delay_ms(1);								//
 		sent_four_bits(0b00000010);					//
 		_delay_ms(1);								//
-		LCD_SentByte(0b00101100, COMMAND);			//
+		LCD_SendByte(0b00101100, COMMAND);			//
 		_delay_ms(1);								//
-		LCD_SentByte(0b00001100, COMMAND);			//
+		LCD_SendByte(0b00001100, COMMAND);			//
 		_delay_ms(1);								//
-		LCD_SentByte(0b00000001, COMMAND);			//
+		LCD_SendByte(0b00000001, COMMAND);			//
 		_delay_ms(1);								//
-		LCD_SentByte(0b00000110, COMMAND);			//
+		LCD_SendByte(0b00000110, COMMAND);			//
 		_delay_ms(1);								//------------------------
 	}																			
 #endif																			
@@ -207,14 +207,14 @@ uint8_t out = 0;								// This byte is generated for sending in the shift regis
 		_delay_us(50);
 	}
 
-	void LCD_SentByte(uint8_t byte,bool rs)		// This function sent byte in the LCD	 
+	void LCD_SendByte(uint8_t byte,bool rs)		// This function sent byte in the LCD	 
 	{
 		if (rs == COMMAND)SET_RS_TO_0;			// DATA / COMMAND								
 		else SET_RS_TO_1;						// rs = 0 - COMMAND rs = 1 - DATA
 		sent_eight_bits(byte);					
 	}											
 												
-	void LCD_SentChar(uint8_t data)				// This function sent data byte in the LCD									
+	void LCD_SendChar(uint8_t data)				// This function sent data byte in the LCD									
 	{
 		SET_RS_TO_1;
 		sent_eight_bits(data);												
@@ -242,13 +242,13 @@ uint8_t out = 0;								// This byte is generated for sending in the shift regis
 		_delay_ms(1);									//
 		sent_eight_bits(0b00111000);					//
 		_delay_ms(1);									//
-		LCD_SentByte(0x38, COMMAND);					//
+		LCD_SendByte(0x38, COMMAND);					//
 		_delay_ms(1);									//
-		LCD_SentByte(0x0e, COMMAND);					//
+		LCD_SendByte(0x0e, COMMAND);					//
 		_delay_ms(1);									//
-		LCD_SentByte(0b00000001, COMMAND);				//
+		LCD_SendByte(0b00000001, COMMAND);				//
 		_delay_ms(1);									//
-		LCD_SentByte(0b00000110, COMMAND);				//
+		LCD_SendByte(0b00000110, COMMAND);				//
 		_delay_ms(1);									//
 	}													//------------------------
 												
@@ -263,7 +263,7 @@ uint8_t out = 0;								// This byte is generated for sending in the shift regis
 void LCD_Clear(void)								// This function clears LCD		
 {
 	_delay_ms(1);
-	LCD_SentByte(0b00000001, COMMAND);						
+	LCD_SendByte(0b00000001, COMMAND);						
 	_delay_ms(2);
 }
 
@@ -272,32 +272,42 @@ void LCD_GotoXY(uint8_t line, uint8_t coloum)		// Sets cursor on desired positio
 	uint8_t adres;
 	adres = 0x40*line+coloum;
 	adres |= 0x80;
-	LCD_SentByte(adres, COMMAND);	
+	LCD_SendByte(adres, COMMAND);	
 }
 
 void LCD_State(uint8_t state)						//	You can turn on LCD or turn off his
 {
-	LCD_SentByte((0b00001000|state), COMMAND);
+	LCD_SendByte((0b00001000|state), COMMAND);
 }
 
 void LCD_Cursor(uint8_t cursor)						//	Sets desired cursor mode
 {
-	LCD_SentByte((0b00001100|cursor), COMMAND);
+	LCD_SendByte((0b00001100|cursor), COMMAND);
 }
 
 void LCD_Scroll(uint8_t number, uint8_t dir)		//	Scrolls the visible part in the desired direction and on the required number of characters
 {
 	for(uint8_t i = 0; i < number; i++)
 	{
-		LCD_SentByte((0b00011000|dir), COMMAND);
+		LCD_SendByte((0b00011000|dir), COMMAND);
 	}
 }
 
-void LCD_SentLine(char line[],uint8_t lon)			//	Sent text data in the LCD
+void LCD_SendLine(char line[],uint8_t lon)			//	Sent text data in the LCD
 {
 	for(uint8_t i = 0;i <= lon; i++)
 	{
-		LCD_SentChar(ConvertToCyrillic(line[i]));
+		LCD_SendChar(ConvertToCyrillic(line[i]));
+	}
+}
+
+void LCD_SendLine(char line[])			//	Sent text data in the LCD
+{
+	uint8_t i = 0;
+	while(line[i] != '\0')
+	{
+		LCD_SendChar(ConvertToCyrillic(line[i]));
+		i++;
 	}
 }
 

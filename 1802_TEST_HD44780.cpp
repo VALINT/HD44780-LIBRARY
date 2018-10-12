@@ -53,129 +53,129 @@ void initial_microkontroller()			//функція ініціалізації мікроконтролера
 }
 
 
-void print (uint8_t numb, uint8_t coordinat)
+void print (uint8_t numb, uint8_t coordinate)
 {
 	switch (numb)
 	{
 		case 0:
-		LCD_GotoXY(0,coordinat);
-		LCD_SentChar(255);
-		LCD_SentChar(0);
-		LCD_SentChar(255);
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(255);
-		LCD_SentChar(1);
-		LCD_SentChar(255);
+		LCD_GotoXY(0,coordinate);
+		LCD_SendChar(255);
+		LCD_SendChar(0);
+		LCD_SendChar(255);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(255);
+		LCD_SendChar(1);
+		LCD_SendChar(255);
 		break;
 		
 		case 1:
-		LCD_GotoXY(0,coordinat);
-		LCD_SentChar(5);
-		LCD_SentChar(255);
-		LCD_SentChar(5);
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(5);
-		LCD_SentChar(255);
-		LCD_SentChar(5);
+		LCD_GotoXY(0,coordinate);
+		LCD_SendChar(5);
+		LCD_SendChar(255);
+		LCD_SendChar(5);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(5);
+		LCD_SendChar(255);
+		LCD_SendChar(5);
 		break;
 		
 		case 2:
-		LCD_GotoXY(0,coordinat);
-		LCD_SentChar(0);
-		LCD_SentChar(0);
-		LCD_SentChar(255);
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(255);
-		LCD_SentChar(2);
-		LCD_SentChar(2);
+		LCD_GotoXY(0,coordinate);
+		LCD_SendChar(0);
+		LCD_SendChar(0);
+		LCD_SendChar(255);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(255);
+		LCD_SendChar(2);
+		LCD_SendChar(2);
 		break;
 		
 		case 3:
-		LCD_GotoXY(0,coordinat);
-		LCD_SentChar(2);
-		LCD_SentChar(2);
-		LCD_SentChar(255);
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(1);
-		LCD_SentChar(1);
-		LCD_SentChar(255);
+		LCD_GotoXY(0,coordinate);
+		LCD_SendChar(2);
+		LCD_SendChar(2);
+		LCD_SendChar(255);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(1);
+		LCD_SendChar(1);
+		LCD_SendChar(255);
 		break;
 		
 		case 4:
-		LCD_GotoXY(0,coordinat);
-		LCD_SentChar(255);
-		LCD_SentChar(1);
-		LCD_SentChar(255);
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(5);
-		LCD_SentChar(5);
-		LCD_SentChar(255);
+		LCD_GotoXY(0,coordinate);
+		LCD_SendChar(255);
+		LCD_SendChar(1);
+		LCD_SendChar(255);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(5);
+		LCD_SendChar(5);
+		LCD_SendChar(255);
 		break;
 		
 		case 5:
-		LCD_GotoXY(0,coordinat);
-		LCD_SentChar(255);
-		LCD_SentChar(2);
-		LCD_SentChar(2);
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(1);
-		LCD_SentChar(1);
-		LCD_SentChar(255);
+		LCD_GotoXY(0,coordinate);
+		LCD_SendChar(255);
+		LCD_SendChar(2);
+		LCD_SendChar(2);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(1);
+		LCD_SendChar(1);
+		LCD_SendChar(255);
 		break;
 		
 		case 6:
-		LCD_GotoXY(0,coordinat);
-		LCD_SentChar(255);
-		LCD_SentChar(2);
-		LCD_SentChar(2);
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(255);
-		LCD_SentChar(1);
-		LCD_SentChar(255);
+		LCD_GotoXY(0,coordinate);
+		LCD_SendChar(255);
+		LCD_SendChar(2);
+		LCD_SendChar(2);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(255);
+		LCD_SendChar(1);
+		LCD_SendChar(255);
 		break;
 		
 		case 7:
-		LCD_GotoXY(0,coordinat);
-		LCD_SentChar(0);
-		LCD_SentChar(0);
-		LCD_SentChar(255);
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(5);
-		LCD_SentChar(5);
-		LCD_SentChar(255);
+		LCD_GotoXY(0,coordinate);
+		LCD_SendChar(0);
+		LCD_SendChar(0);
+		LCD_SendChar(255);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(5);
+		LCD_SendChar(5);
+		LCD_SendChar(255);
 		break;
 		
 		case 8:
-		LCD_GotoXY(0,coordinat);
-		LCD_SentChar(255);
-		LCD_SentChar(2);
-		LCD_SentChar(255);
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(255);
-		LCD_SentChar(1);
-		LCD_SentChar(255);
+		LCD_GotoXY(0,coordinate);
+		LCD_SendChar(255);
+		LCD_SendChar(2);
+		LCD_SendChar(255);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(255);
+		LCD_SendChar(1);
+		LCD_SendChar(255);
 		break;
 		
 		case 9:
-		LCD_GotoXY(0,coordinat);
-		LCD_SentChar(255);
-		LCD_SentChar(2);
-		LCD_SentChar(255);
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(1);
-		LCD_SentChar(1);
-		LCD_SentChar(255);
+		LCD_GotoXY(0,coordinate);
+		LCD_SendChar(255);
+		LCD_SendChar(2);
+		LCD_SendChar(255);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(1);
+		LCD_SendChar(1);
+		LCD_SendChar(255);
 		break;
 		
 		case 10:
-		LCD_GotoXY(1, coordinat);
-		LCD_SentChar(5);
-		LCD_SentChar(5);
-		LCD_SentChar(5);
-		LCD_GotoXY(coordinat,1);
-		LCD_SentChar(5);
-		LCD_SentChar(5);
-		LCD_SentChar(5);
+		LCD_GotoXY(1, coordinate);
+		LCD_SendChar(5);
+		LCD_SendChar(5);
+		LCD_SendChar(5);
+		LCD_GotoXY(coordinate,1);
+		LCD_SendChar(5);
+		LCD_SendChar(5);
+		LCD_SendChar(5);
 		break;
 	}
 }
@@ -228,13 +228,13 @@ ISR (TIMER0_OVF_vect)
 		a++;
 		LCD_Initial();
 		_delay_ms(1);
-		LCD_SentByte(0x40,COMMAND);
+		LCD_SendByte(0x40,COMMAND);
 		for (uint8_t i=0; i < 6; i++)
 		{
 			for(uint8_t j = 0; j < 8; j++)
 			{
 				data = numb0[i][j];
-				LCD_SentByte(data,DATA);
+				LCD_SendByte(data,DATA);
 			}
 		}
 	}
@@ -257,21 +257,21 @@ ISR (TIMER0_OVF_vect)
 	LCD_GotoXY(0, 16);
 	if(sec < 10) sprintf(line,"0%d",(sec));
 	else sprintf(line,"%d",(sec));
-	LCD_SentLine(line,2);
+	LCD_SendLine(line,2);
 	
 	if (x == 8)
 	{
 		LCD_GotoXY(0, 7);
-		LCD_SentChar(4);
+		LCD_SendChar(4);
 		LCD_GotoXY(1, 7);
-		LCD_SentChar(4);
+		LCD_SendChar(4);
 	}
 	if (x == 0)
 	{
 		LCD_GotoXY(0, 7);
-		LCD_SentChar(5);
+		LCD_SendChar(5);
 		LCD_GotoXY(1, 7);
-		LCD_SentChar(5);
+		LCD_SendChar(5);
 	}
 }
 
@@ -283,13 +283,13 @@ int main(void)
 	_delay_ms(100);
 	LCD_Clear();
 	_delay_ms(100);
-	LCD_SentByte(0x40,COMMAND);
+	LCD_SendByte(0x40,COMMAND);
 	for (int i=0; i < 6; i++)
 	{
 		for(int j = 0; j < 8; j++)
 		{
 			data = numb0[i][j];
-			LCD_SentByte(data,DATA);
+			LCD_SendByte(data,DATA);
 		}
 	}
 	
@@ -335,7 +335,7 @@ int main(void)
 		
 		LCD_Clear();
 		LCD_GotoXY(0,0);
-		LCD_SentLine(line, 35);
+		LCD_SendLine(line);
 		_delay_ms(500);
 		while(1)
 		{
