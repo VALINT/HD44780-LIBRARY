@@ -10,6 +10,8 @@ This library allows you to work with LCD in different modes, namely:
   - Standard 4-bit mode
   
   - standard 8-bit mode
+  
+This library allows to work with strings who localed in RAM, FLASH and EEPROM memory.
 
 Also pins for display control can be assigned in any order and from any ports.
 
